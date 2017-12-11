@@ -21,4 +21,18 @@ const altFilters2 = {
     endDate: moment(0).add(10, 'days')
 }
 
-export { defaultFilters, altFilters, altFilters2 };
+const altFilters3 = {
+    text: '',
+    sortBy: 'date',
+    startDate: moment(0),
+    endDate: moment(0).add(3, 'days')
+}
+
+const altFilters4 = {
+    text: '',
+    sortBy: 'amount',
+    startDate: moment(0),
+    endDate: moment(0).add(10, 'days')
+}
+
+export { defaultFilters, altFilters, altFilters2, altFilters3, altFilters4 };

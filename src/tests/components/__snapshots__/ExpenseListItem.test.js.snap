@@ -13,7 +13,7 @@ exports[`should render ExpenseListItem 1`] = `
   </Link>
   <p>
     Amount: 
-    $1.00
+    $1,305.02
   </p>
   <p>
     Created at: 
