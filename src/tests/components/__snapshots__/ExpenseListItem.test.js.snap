@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render ExpenseListItem 1`] = `
+<div>
+  <Link
+    replace={false}
+    to="/edit/1"
+  >
+    <h3>
+      Description: 
+      hello
+    </h3>
+  </Link>
+  <p>
+    Amount: 
+    100
+  </p>
+  <p>
+    Created at: 
+    1st Jan 1970, 8:00:00:00 +08:00
+  </p>
+</div>
+`;
