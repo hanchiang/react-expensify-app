@@ -4,10 +4,11 @@ import { Provider } from 'react-redux';
 import 'react-dates/initialize';
 
 import AppRouter from './routers/AppRouter';
-import store from './store/configureStore';
+import store from './store/store';
 import { addExpense } from './actions/expenses';
 import { setTextFilter } from './actions/filters';
 import getVisibleExpenses from './selectors/expenses';
+import './firebase/firebase';
 
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
