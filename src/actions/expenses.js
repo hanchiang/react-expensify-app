@@ -31,6 +31,15 @@ const removeExpense = (id = '') => ({
   id
 });
 
+// Remove from database
+// Async thunk to remove expense from firebase and trigger REMOVE_EXPENSE
+const startRemoveExpense = (id = '') => {
+  return (dispatch) => {
+    return database.ref(`expenses/${id}`).remove()
+      .then(() => dispatch(removeExpense(id)));
+  }
+}
+
 // EDIT_EXPENSE
 const editExpense = (id, updates) => ({
   type: 'EDIT_EXPENSE',
@@ -64,5 +73,5 @@ const startSetExpenses = () => {
 }
 
 
-export { addExpense, startAddExpense, removeExpense, editExpense, setExpenses, startSetExpenses };
+export { addExpense, startAddExpense, removeExpense, editExpense, setExpenses, startSetExpenses, startRemoveExpense };
 

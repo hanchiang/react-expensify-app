@@ -66,3 +66,4 @@ test('should set and overwrite expenses', () => {
     const state = expensesReducer(expenses, action);
     expect(state).toEqual([expenses[1]]);
 });
+

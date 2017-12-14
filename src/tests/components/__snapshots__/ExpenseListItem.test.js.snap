@@ -19,5 +19,11 @@ exports[`should render ExpenseListItem 1`] = `
     Created at: 
     1st Jan 1970, 8:00:00:00 +08:00
   </p>
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    Remove
+  </button>
 </div>
 `;

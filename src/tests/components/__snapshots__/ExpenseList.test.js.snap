@@ -20,6 +20,7 @@ exports[`should render ExpenseList with expenses 1`] = `
         "note": "",
       }
     }
+    handleRemove={[Function]}
     key="1"
   />
   <ExpenseListItem
@@ -32,6 +33,7 @@ exports[`should render ExpenseList with expenses 1`] = `
         "note": "",
       }
     }
+    handleRemove={[Function]}
     key="2"
   />
   <ExpenseListItem
@@ -44,6 +46,7 @@ exports[`should render ExpenseList with expenses 1`] = `
         "note": "",
       }
     }
+    handleRemove={[Function]}
     key="3"
   />
 </div>
