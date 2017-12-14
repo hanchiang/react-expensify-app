@@ -47,6 +47,15 @@ const editExpense = (id, updates) => ({
   updates
 });
 
+// Modify data in the database
+// Asuync thunk function to modify data in firebase
+const startEditExpense = (id, updates) => {
+  return (dispatch) => {
+    return database.ref(`expenses/${id}`).update(updates)
+      .then(() => dispatch(editExpense(id, updates)));
+  }
+};
+
 // SET_EXPENSES
 const setExpenses = (expenses) => ({
   type: 'SET_EXPENSES',
@@ -73,5 +82,6 @@ const startSetExpenses = () => {
 }
 
 
-export { addExpense, startAddExpense, removeExpense, editExpense, setExpenses, startSetExpenses, startRemoveExpense };
+export { addExpense, startAddExpense, removeExpense, editExpense, startEditExpense, 
+  setExpenses, startSetExpenses, startRemoveExpense };
 

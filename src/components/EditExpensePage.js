@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import ExpenseForm from './ExpenseForm';
-import { editExpense, startRemoveExpense } from '../actions/expenses';
+import { startEditExpense, startRemoveExpense } from '../actions/expenses';
 
 // Use the id from match.params to find the expense object
 
@@ -12,7 +12,7 @@ export function EditExpensePage(props) {
         props.history.push('/');
     }
     const handleSubmit = (expense) => {
-        props.editExpense(expense.id, expense);
+        props.startEditExpense(props.expense.id, expense);
         props.history.push('/');
     }
 
@@ -25,7 +25,7 @@ export function EditExpensePage(props) {
 }
 
 const mapDispatchToProps = (dispatch, props) => ({
-    editExpense: (id, expense) => dispatch(editExpense(id, expense)),
+    startEditExpense: (id, expense) => dispatch(startEditExpense(id, expense)),
     startRemoveExpense: (id) => dispatch(startRemoveExpense(id))
     
 });
