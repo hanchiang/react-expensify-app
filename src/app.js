@@ -30,10 +30,9 @@ const renderApp = () => {
 
 ReactDOM.render(<p>Loading...</p>, document.getElementById('app'));
 
-// Will run when a user first visits the web page, or page refresh?
+// Will run when a user first visits the web page and when page refresh
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
-    console.log('uid', user.uid);
     console.log(user);
 
     store.dispatch(login(user.uid));
@@ -41,7 +40,6 @@ firebase.auth().onAuthStateChanged((user) => {
       renderApp();
       // Impt: Only redirect to dashboard when the current page is the login page
       if (history.location.pathname === '/') {
-        console.log('Loginpage: Redirecting to dashboard');
         history.push('/dashboard');
       }
       

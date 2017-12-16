@@ -6,15 +6,17 @@ import Header from '../components/Header';
 
 export function PrivateRoute(props) {
   const { isAuthenticated, component: Component, ...rest } = props;
+  console.log(props);
   return (
-    <Route  {...rest} component={(props) =>
-      isAuthenticated ? (
+    <Route  {...rest} component={(props) => {
+      console.log(props);
+      return isAuthenticated ? (
         <div>
           <Header />
           <Component {...props} />
         </div>) :
         <Redirect to="/" />
-      } 
+    }} 
     />
   );
 }

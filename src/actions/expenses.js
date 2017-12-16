@@ -11,11 +11,12 @@ const addExpense = (expense) => ({
 // Add to database
 // Async thunk to add expense to firebase and trigger ADD_EXPENSE action
 const startAddExpense = (expenseData = {}) => {
-  return (dispatch) => {
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
     const { description = '', note = '', amount = 0, createdAt = 0 } = expenseData;
     const expense = { description, note, amount, createdAt };
 
-    return database.ref('expenses').push(expense)
+    return database.ref(`users/${uid}/expenses`).push(expense)
       .then((ref) => {
         dispatch(addExpense({
           id: ref.key,
@@ -34,8 +35,9 @@ const removeExpense = (id = '') => ({
 // Remove from database
 // Async thunk to remove expense from firebase and trigger REMOVE_EXPENSE
 const startRemoveExpense = (id = '') => {
-  return (dispatch) => {
-    return database.ref(`expenses/${id}`).remove()
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
+    return database.ref(`users/${uid}/expenses/${id}`).remove()
       .then(() => dispatch(removeExpense(id)));
   }
 }
@@ -50,8 +52,9 @@ const editExpense = (id, updates) => ({
 // Modify data in the database
 // Asuync thunk function to modify data in firebase
 const startEditExpense = (id, updates) => {
-  return (dispatch) => {
-    return database.ref(`expenses/${id}`).update(updates)
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
+    return database.ref(`users/${uid}/expenses/${id}`).update(updates)
       .then(() => dispatch(editExpense(id, updates)));
   }
 };
@@ -65,9 +68,10 @@ const setExpenses = (expenses) => ({
 // Fetch from database
 // Async thunk function to fetch expenses from firebase and trigger SET_EXPENSES action
 const startSetExpenses = () => {
-  return (dispatch) => {
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
     const expenses = [];
-    return database.ref('expenses')
+    return database.ref(`users/${uid}/expenses`)
       .once('value')
       .then((snapshot) => {
         snapshot.forEach((childSnapshot) => {
