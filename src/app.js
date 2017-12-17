@@ -9,6 +9,7 @@ import { startSetExpenses } from './actions/expenses';
 import { login, logout } from './actions/auth';
 import getVisibleExpenses from './selectors/expenses';
 import { firebase } from './firebase/firebase';
+import LoadingPage from './components/LoadingPage';
 
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';
@@ -28,9 +29,10 @@ const renderApp = () => {
   }
 };
 
-ReactDOM.render(<p>Loading...</p>, document.getElementById('app'));
+ReactDOM.render(<LoadingPage />, document.getElementById('app'));
 
 // Will run when a user first visits the web page and when page refresh
+
 firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     console.log(user);
@@ -48,6 +50,7 @@ firebase.auth().onAuthStateChanged((user) => {
   } else {
     console.log('Logged out');
     store.dispatch(logout());
+    // reset state
     renderApp();
     history.push('/');
   }

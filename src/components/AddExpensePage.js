@@ -11,8 +11,16 @@ export function AddExpensePage(props) {
     }
     return (
         <div>
-            <h1>Add expense</h1>
-            <ExpenseForm onSubmit={handleSubmit}/>
+            <div className="page-header">
+                <div className="content-container">
+                    <h1 className="page-header__title">Add expense</h1>
+                </div>
+            </div>
+            <div className="content-container">
+                <ExpenseForm onSubmit={handleSubmit} />
+            </div>
+            
+            
         </div>
     );
 }

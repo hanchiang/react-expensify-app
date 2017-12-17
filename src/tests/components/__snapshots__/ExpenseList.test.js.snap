@@ -1,53 +1,107 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render ExpenseList with empty message 1`] = `
-<div>
-  <p>
-    No expenses
-  </p>
+<div
+  className="content-container"
+>
+  <div
+    className="list-header"
+  >
+    <div
+      className="show-for-mobile"
+    >
+      Expenses
+    </div>
+    <div
+      className="show-for-desktop"
+    >
+      Expense
+    </div>
+    <div
+      className="show-for-desktop"
+    >
+      Amount
+    </div>
+  </div>
+  <div
+    className="list-body"
+  >
+    <div
+      className="list-item list-item--message"
+    >
+      <span>
+        No expenses
+      </span>
+    </div>
+  </div>
 </div>
 `;
 
 exports[`should render ExpenseList with expenses 1`] = `
-<div>
-  <ExpenseListItem
-    expense={
-      Object {
-        "amount": 130502,
-        "createdAt": 0,
-        "description": "hello",
-        "id": "1",
-        "note": "",
+<div
+  className="content-container"
+>
+  <div
+    className="list-header"
+  >
+    <div
+      className="show-for-mobile"
+    >
+      Expenses
+    </div>
+    <div
+      className="show-for-desktop"
+    >
+      Expense
+    </div>
+    <div
+      className="show-for-desktop"
+    >
+      Amount
+    </div>
+  </div>
+  <div
+    className="list-body"
+  >
+    <ExpenseListItem
+      expense={
+        Object {
+          "amount": 130502,
+          "createdAt": 0,
+          "description": "hello",
+          "id": "1",
+          "note": "",
+        }
       }
-    }
-    handleRemove={[Function]}
-    key="1"
-  />
-  <ExpenseListItem
-    expense={
-      Object {
-        "amount": 1204032,
-        "createdAt": -345600000,
-        "description": "water",
-        "id": "2",
-        "note": "",
+      handleRemove={[Function]}
+      key="1"
+    />
+    <ExpenseListItem
+      expense={
+        Object {
+          "amount": 1204032,
+          "createdAt": -345600000,
+          "description": "water",
+          "id": "2",
+          "note": "",
+        }
       }
-    }
-    handleRemove={[Function]}
-    key="2"
-  />
-  <ExpenseListItem
-    expense={
-      Object {
-        "amount": 35304,
-        "createdAt": 345600000,
-        "description": "bill",
-        "id": "3",
-        "note": "",
+      handleRemove={[Function]}
+      key="2"
+    />
+    <ExpenseListItem
+      expense={
+        Object {
+          "amount": 35304,
+          "createdAt": 345600000,
+          "description": "bill",
+          "id": "3",
+          "note": "",
+        }
       }
-    }
-    handleRemove={[Function]}
-    key="3"
-  />
+      handleRemove={[Function]}
+      key="3"
+    />
+  </div>
 </div>
 `;

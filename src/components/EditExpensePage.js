@@ -18,8 +18,15 @@ export function EditExpensePage(props) {
 
     return (
         <div>
-            <ExpenseForm onSubmit={handleSubmit} expense={props.expense} />
-            <button onClick={handleRemove}>Remove</button>
+            <div className="page-header">
+                <div className="content-container">
+                    <h1 className="page-header__title">Edit expense</h1>
+                </div>
+            </div>
+            <div className="content-container">
+                <ExpenseForm onSubmit={handleSubmit} expense={props.expense} />
+                <button className="button button--remove" onClick={handleRemove}>Remove expense</button>
+            </div>
         </div>
     );
 }

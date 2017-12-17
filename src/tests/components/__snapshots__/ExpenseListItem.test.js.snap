@@ -1,29 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render ExpenseListItem 1`] = `
-<div>
-  <Link
-    replace={false}
-    to="/edit/1"
-  >
-    <h3>
-      Description: 
+<Link
+  className="list-item"
+  replace={false}
+  to="/edit/1"
+>
+  <div>
+    <h3
+      className="list-item__title"
+    >
       hello
     </h3>
-  </Link>
-  <p>
-    Amount: 
-    $1,305.02
-  </p>
-  <p>
-    Created at: 
-    1st Jan 1970, 8:00:00:00 +08:00
-  </p>
-  <button
-    onClick={[Function]}
-    type="button"
+    <span
+      className="list-item__sub-title"
+    >
+      January 1st 1970, 8:00:00
+    </span>
+  </div>
+  <h3
+    className="list-item__data"
   >
-    Remove
-  </button>
-</div>
+    $1,305.02
+  </h3>
+</Link>
 `;
